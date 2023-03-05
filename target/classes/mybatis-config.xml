@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"></setting>
+		<setting name="mapUnderscoreToCamelCase" value="true"></setting>
+	</settings>
+	<typeAliases>
+		<typeAlias type="kh.spring.s03.member.vo.MemberVo" alias="mvo"/>
+		<!-- <typeAlias type="kh.spring.s02.board.model.vo.MemberVo" alias="mvo"/> -->
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappers/member-mapper.xml"/>
+	</mappers>
+</configuration>
