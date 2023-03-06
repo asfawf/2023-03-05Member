@@ -1,10 +1,13 @@
 package kh.spring.s03.member.vo;
 
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 @Component
 public class MemberVo {
 
+	// 반드시 갖고 들어와야 하는 데이터일 경우(유효성 체크) @Validated 작성
+	
 	private String id;
 	private String passwd;
 	private String name;
