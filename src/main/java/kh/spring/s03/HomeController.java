@@ -4,6 +4,9 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -23,10 +26,17 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale
+			, Model model
+			,HttpSession session
+			,HttpServletRequest req
+			) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		
+		/* 해당 방법은 올바르지 않은 케이스
+		 * String msg= req.getParameter("msg"); System.out.println("MSG: " + msg);
+		 * model.addAttribute("alertMsg", msg);
+		 */
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);

@@ -15,7 +15,7 @@ public class MemberServiceImp implements MemberService{
 	private MemberDao dao;
 
 	@Override
-	public int insert(MemberVo vo) {
+	public int insert(MemberVo vo) throws Exception {
 		return dao.insert(vo);
 	}
 

@@ -29,10 +29,12 @@
 	</delete>
 	
 <!-- 	<select id="selectOneId" parameterType="string" resultMap="mMap"> -->
+<!-- mvo 는 인스턴스 객체가 아닌 별칭 느낌 == mv.XXXXX 불가능 -->
 	<select id="selectOneId" parameterType="string" resultType="mvo">
 		select * from  test_member where ID=#{id}	
 	</select>
-	
+
+	<!-- resultType= (resultType의 type 에 기입된 문자 ) , resultMap=(resultType의 id 에 기입된 문자) -->	
 	<select id="selectListId" resultType="mvo">
 		select * from  test_member 
 	</select>

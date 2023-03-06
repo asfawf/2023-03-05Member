@@ -14,8 +14,21 @@ public class MemberDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int insert(MemberVo vo) {
-		return sqlSession.insert("memberMapper.insertId", vo);
+	// 해당 try catch 의 경우 회원가입시 중복된 값으로 실패할 경우 오류 페이지로 보내지 않고 -1 을 반환하게 한다
+	public int insert(MemberVo vo) throws Exception{
+		/*
+		 * int result = -1;
+		 * 
+		 * try { return sqlSession.insert("memberMapper.insertId", vo); } catch
+		 * (Exception e) { e.printStackTrace(); }
+		 * 
+		 * return result;
+		 */
+		int result = -1;
+		
+		result= sqlSession.insert("memberMapper.insertId", vo);
+		
+		return result;
 	}
 	public int update(MemberVo vo) {
 		return sqlSession.update("memberMapper.updateId", vo);

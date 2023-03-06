@@ -5,6 +5,18 @@
 	<title>Home</title>
 </head>
 <body>
+<script>
+/* 	var msg= "${alertMsg}";
+	if(msg){
+		alert(msg);
+	} */
+	
+	var msg2= "${alert}";
+	if(msg2){
+		alert(msg2);
+	}
+	
+</script>
 <h1>
 	Hello world!  
 </h1>
