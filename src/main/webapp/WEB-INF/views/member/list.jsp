@@ -9,15 +9,19 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" ></script>
 
 <style>
-	.f-3{
+.f-3 {
 		display: flex;
 		height: 50px;
-		width: 300px;
+		width:300px;
 	}
-	.f-3 div{
-		
+	.f-3 div:not(:last-child){
 		border: 1px black solid;
-		width: 33% ;
+		width: 100px;
+		flex-shrink: 0;
+	}
+	.f-3 div:last-child{
+		border: 1px black solid;
+		width: 150px;
 	}
 
 </style>
@@ -25,18 +29,18 @@
 <body>
 	<div class="f-3">
 		<div>아이디</div>
-		<div>비밀번호</div>
 		<div>이름</div>
 		<div>이메일</div>
 	</div>
 	<c:forEach items="${ membervolist}" var="member">
+		<a href="<%=request.getContextPath()%>/member/info?id=${member.id}">
 		<div class="f-3">
-			<a href="<%=request.getContextPath()%>/member/info?id=${member.id}">
+			
 				<div>${ member.id}</div>
 				<div>${ member.name}</div>
 				<div>${ member.email}</div>
-			</a>
 		</div>
+		</a>
 	</c:forEach>
 
 </body>

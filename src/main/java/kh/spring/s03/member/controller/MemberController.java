@@ -31,7 +31,8 @@ public class MemberController {
 
 	
 	@GetMapping("/signUp")
-	public ModelAndView viewInsert(ModelAndView mv) {
+	public ModelAndView viewInsert(ModelAndView mv) throws Exception {
+		mv.addObject("memberlist", service.selectList());
 		mv.setViewName("member/signUp");
 		return mv;
 	}
